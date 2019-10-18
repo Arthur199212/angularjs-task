@@ -61,16 +61,14 @@
                         Show phone numbers
                       </div>
                     </div>
-
-
                   </div>
-                      <div class="create-contact_container">
-                        <p class="label_search">Add a new contact</p>
-                        <input class="input_query" type="text" placeholder="Name" ng-model="nameNew">
-                        <input class="input_query" type="text" placeholder="Phone" ng-model="phoneNew">
-                        <button class="btn create_btn" type="button"><span>Create</span></button>
-                      </div>
-                  
+
+                  <div class="create-contact_container">
+                    <p class="label_search">Add a new contact</p>
+                    <input class="input_query" type="text" placeholder="Name" ng-model="nameNew">
+                    <input class="input_query" type="text" placeholder="Phone" ng-model="phoneNew">
+                    <button class="btn create_btn" type="button" ng-click="addContact()"><span>Create</span></button>
+                  </div>
 
                 </div>
               </div>
@@ -85,8 +83,13 @@
                   </thead>
                   <tbody>
                     <tr ng-repeat="item in data | dataFilter : query : checked" ng-class="highlite(item.name[0])">
-                      <td>{{item.name}}</td>
-                      <td ng-show="checked">{{item.phone}}</td>
+                      <td>
+                        {{item.name}}
+                      </td>
+                      <td ng-show="checked">
+                        {{item.phone}}
+                        
+                      </td>
                     </tr>
                   </tbody>
                 </table>
