@@ -2,6 +2,7 @@ import angular from "angular";
 
 import "./style.scss";
 import './filters';
+import idGenerator from './helpers/idGenerator';
 
 const app = angular.module("phonebookApp", [
   "customFilters"
@@ -28,6 +29,7 @@ app.controller("MainController", function searchCtrl($scope, $http) {
   $scope.addContact = () => {
     if ($scope.nameNew && $scope.phoneNew) {
       $scope.data = [...$scope.data, {
+        id: idGenerator(),
         name: $scope.nameNew,
         phone: $scope.phoneNew
       }];

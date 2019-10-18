@@ -9,6 +9,7 @@
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "start": "npm run server"
   },
   "keywords": [],
