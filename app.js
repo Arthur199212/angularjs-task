@@ -1,4 +1,5 @@
 import angular from 'angular';
+import './style.scss';
 
 const app = angular.module("phonebookApp", []);
 
