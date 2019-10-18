@@ -75,6 +75,15 @@ main {
   background-color: rgb(255, 230, 230);
 }
 
+.phone_td {
+  display: flex;
+  justify-content: space-between;
+
+  .delete_btn {
+    cursor: pointer;
+  }
+}
+
 // BUTTONS STYLING
 .btn {
   position: relative;

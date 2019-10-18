@@ -38,4 +38,7 @@ app.controller("MainController", function searchCtrl($scope, $http) {
       alert('Fill up all the fields to create a new contact');
     }
   }
+
+  $scope.deleteContact = item =>
+    $scope.data = $scope.data.filter(({ id }) => item.id !== id);
 });

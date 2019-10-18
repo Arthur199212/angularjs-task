@@ -83,8 +83,13 @@
                   </thead>
                   <tbody>
                     <tr ng-repeat="item in data | dataFilter : query : checked" ng-class="highlite(item.name[0])">
-                      <td>{{item.name}}</td>
-                      <td ng-show="checked">{{item.phone}}</td>
+                      <td>
+                        {{item.name}}
+                      </td>
+                      <td class="phone_td" ng-show="checked">
+                        <span>{{item.phone}}</span>
+                        <span class="delete_btn" ng-click="deleteContact(item)">&#10005;</span>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
