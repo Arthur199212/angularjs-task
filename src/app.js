@@ -34,6 +34,8 @@ app.controller("MainController", function searchCtrl($scope, $http) {
 
       $scope.nameNew = '';
       $scope.phoneNew = '';
+    } else {
+      alert('Fill up all the fields to create a new contact');
     }
   }
 });
