@@ -30,7 +30,10 @@ app.controller("MainController", function searchCtrl($scope, $http) {
       $scope.data = [...$scope.data, {
         name: $scope.nameNew,
         phone: $scope.phoneNew
-      }]
+      }];
+
+      $scope.nameNew = '';
+      $scope.phoneNew = '';
     }
   }
 });
