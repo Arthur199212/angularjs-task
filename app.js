@@ -1,7 +1,11 @@
 import angular from "angular";
-import "./style.scss";
 
-const app = angular.module("phonebookApp", []);
+import "./style.scss";
+import './filters';
+
+const app = angular.module("phonebookApp", [
+  "customFilters"
+]);
 
 app.controller("MainController", function searchCtrl($scope, $http) {
   $http.get("data.json").then(res => {
