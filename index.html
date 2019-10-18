@@ -49,20 +49,22 @@
               <p class="label_search">Search for a contact</p>
               <input class="input_query" type="text" placeholder="Type a query to find a contact..." ng-model="query">
 
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Phone number</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="item in data | filter : query">
-                    <td>{{item.name}}</td>
-                    <td>{{item.phone}}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table_container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone number</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="item in data | filter : query" ng-class="highlite(item.name[0])">
+                      <td>{{item.name}}</td>
+                      <td>{{item.phone}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
             </div>
           </div>

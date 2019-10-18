@@ -1,11 +1,19 @@
 $heighNavFooter: 60px;
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: $heighNavFooter;
+}
+
 .navbar {
   height: $heighNavFooter;
 }
 
 main {
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .phonebook_container {
@@ -16,8 +24,10 @@ main {
   width: 300px;
 }
 
-.table {
+.table_container {
   margin-top: 20px;
+  height: 65vh;
+  overflow-y: auto;
 }
 
 .footer {
@@ -26,5 +36,12 @@ main {
   width: 100%;
   height: $heighNavFooter;
   line-height: $heighNavFooter;
-  background-color: #f5f5f5;
+}
+
+.blue_field {
+  background-color: rgb(224, 249, 255);
+}
+
+.red_field {
+  background-color: rgb(255, 230, 230);
 }
