@@ -45,13 +45,33 @@
       <article class="container">
           <div class="card phonebook_container">
             <div class="card-body">
-              <p class="label_search">Search for a contact</p>
-              <input class="input_query" type="text" placeholder="Type a query to find a contact..." ng-model="query">
 
-              <div class="checkbox_container">
-                <input class="checkbox" type="checkbox" ng-model="checked">
-                <div>
-                  Show phone numbers
+              <div class="card">
+                <div class="card-body controller_container">
+
+                  <div class="search_container">
+                    <div>
+                      <p class="label_search">Search for a contact</p>
+                      <input class="input_query" type="text" placeholder="Type a query..." ng-model="query">
+                    </div>
+  
+                    <div class="checkbox_container">
+                      <input class="checkbox" type="checkbox" ng-model="checked">
+                      <div>
+                        Show phone numbers
+                      </div>
+                    </div>
+
+
+                  </div>
+                      <div class="create-contact_container">
+                        <p class="label_search">Add a new contact</p>
+                        <input class="input_query" type="text" placeholder="Name" ng-model="nameNew">
+                        <input class="input_query" type="text" placeholder="Phone" ng-model="phoneNew">
+                        <button class="btn create_btn" type="button"><span>Create</span></button>
+                      </div>
+                  
+
                 </div>
               </div>
 
@@ -75,7 +95,7 @@
             </div>
           </div>
       </article>
-    </main role="main" class="container">
+    </main>
     <footer class="footer bg-primary text-white">
       <div class="container text-center">
         © Awesome Mentor 2019

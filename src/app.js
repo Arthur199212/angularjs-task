@@ -24,4 +24,13 @@ app.controller("MainController", function searchCtrl($scope, $http) {
       }
     };
   });
+
+  $scope.addContact = () => {
+    if ($scope.nameNew && $scope.phoneNew) {
+      $scope.data = [...$scope.data, {
+        name: $scope.nameNew,
+        phone: $scope.phoneNew
+      }]
+    }
+  }
 });

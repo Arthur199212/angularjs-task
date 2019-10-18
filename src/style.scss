@@ -21,7 +21,11 @@ main {
 }
 
 .input_query {
-  width: 300px;
+  width: 250px;
+
+  @media screen and (max-width: 366px) {
+    width: 200px;
+  }
 }
 
 .checkbox_container {
@@ -33,6 +37,20 @@ main {
     display: inline-block;
     margin-right: 10px;
   }
+}
+
+.search_container {
+  margin-bottom: 20px;
+}
+
+.controller_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.create_btn {
+  margin-top: 20px;
 }
 
 .table_container {
@@ -55,4 +73,62 @@ main {
 
 .red_field {
   background-color: rgb(255, 230, 230);
+}
+
+// BUTTONS STYLING
+.btn {
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgb(0, 123, 255);
+  background-color: rgb(0, 123, 255);
+  color: #ecf0f1;
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: rgb(0, 113, 235);
+  color: #ecf0f1;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 5px 25px;
+}
+
+.btn:before {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  
+  transition: width .2s ease-out, padding-top .2s ease-out;
 }
