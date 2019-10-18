@@ -86,9 +86,9 @@
                       <td>
                         {{item.name}}
                       </td>
-                      <td ng-show="checked">
-                        {{item.phone}}
-                        
+                      <td class="phone_td" ng-show="checked">
+                        <span>{{item.phone}}</span>
+                        <span class="delete_btn" ng-click="deleteContact(item)">&#10005;</span>
                       </td>
                     </tr>
                   </tbody>
