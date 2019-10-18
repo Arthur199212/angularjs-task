@@ -48,18 +48,25 @@
               <p class="label_search">Search for a contact</p>
               <input class="input_query" type="text" placeholder="Type a query to find a contact..." ng-model="query">
 
+              <div class="checkbox_container">
+                <input class="checkbox" type="checkbox" ng-model="checked">
+                <div>
+                  Show phone numbers
+                </div>
+              </div>
+
               <div class="table_container">
                 <table class="table">
                   <thead>
                     <tr>
                       <th scope="col">Name</th>
-                      <th scope="col">Phone number</th>
+                      <th scope="col" ng-show="checked">Phone number</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="item in data | dataFilter : query" ng-class="highlite(item.name[0])">
+                    <tr ng-repeat="item in data | dataFilter : query : checked" ng-class="highlite(item.name[0])">
                       <td>{{item.name}}</td>
-                      <td>{{item.phone}}</td>
+                      <td ng-show="checked">{{item.phone}}</td>
                     </tr>
                   </tbody>
                 </table>

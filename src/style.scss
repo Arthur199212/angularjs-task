@@ -24,6 +24,17 @@ main {
   width: 300px;
 }
 
+.checkbox_container {
+  margin-top: 10px;
+  display: flex;
+  align-items: baseline;
+
+  input {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
 .table_container {
   margin-top: 20px;
   height: 65vh;

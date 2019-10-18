@@ -8,6 +8,8 @@ const app = angular.module("phonebookApp", [
 ]);
 
 app.controller("MainController", function searchCtrl($scope, $http) {
+  $scope.checked = true;
+
   $http.get("data.json").then(res => {
     $scope.data = res.data;
 
