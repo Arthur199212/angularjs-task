@@ -78,10 +78,10 @@ main {
 .phone_td {
   display: flex;
   justify-content: space-between;
+}
 
-  .delete_btn {
-    cursor: pointer;
-  }
+.delete_btn {
+  cursor: pointer;
 }
 
 // BUTTONS STYLING
@@ -96,10 +96,11 @@ main {
   box-shadow: 0 1px 4px rgb(0, 123, 255);
   background-color: rgb(0, 123, 255);
   color: #ecf0f1;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   background-color: rgb(0, 113, 235);
   color: #ecf0f1;
 }
@@ -115,19 +116,19 @@ main {
 
 .btn:before {
   content: "";
-  
+
   position: absolute;
   top: 50%;
   left: 50%;
-  
+
   display: block;
   width: 0;
   padding-top: 0;
-    
+
   border-radius: 100%;
-  
-  background-color: rgba(236, 240, 241, .3);
-  
+
+  background-color: rgba(236, 240, 241, 0.3);
+
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -138,6 +139,6 @@ main {
 .btn:active:before {
   width: 120%;
   padding-top: 120%;
-  
-  transition: width .2s ease-out, padding-top .2s ease-out;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
