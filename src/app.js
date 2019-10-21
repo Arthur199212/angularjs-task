@@ -2,10 +2,9 @@ import angular from "angular";
 
 import "./style.scss";
 import './filters';
-import phonebookCtrl from './controllers/phonebookCtrl';
+import './controllers';
 
-const app = angular.module("phonebookApp", [
-  "customFilters"
+angular.module("phonebookApp", [
+  "customFilters",
+  "phonebookModule"
 ]);
-
-app.controller("PhonebookCtrl", phonebookCtrl);
