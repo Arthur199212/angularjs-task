@@ -4,7 +4,7 @@ import "./style.scss";
 import './filters';
 import './controllers';
 
-angular.module("phonebookApp", [
-  "customFilters",
-  "phonebookModule"
+angular.module("PhonebookApp", [
+  "CustomFilters",
+  "PhonebookModule"
 ]);

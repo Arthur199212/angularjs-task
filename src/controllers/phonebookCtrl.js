@@ -1,6 +1,6 @@
 import idGenerator from '../helpers/idGenerator';
 
-export default function phonebookCtrl($scope, $http) {
+export default function PhonebookCtrl($scope, $http) {
     $scope.checked = true;
   
     $http.get("data.json").then(res => {

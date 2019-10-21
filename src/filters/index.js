@@ -1,5 +1,5 @@
 import angular from 'angular';
-import dataFilter from './dataFilter';
+import DataFilter from './DataFilter';
 
-export default angular.module("customFilters", [])
-  .filter("dataFilter", dataFilter);
+export default angular.module("CustomFilters", [])
+  .filter("DataFilter", DataFilter);

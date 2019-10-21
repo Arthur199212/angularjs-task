@@ -1,5 +1,5 @@
 import angular from 'angular';
-import phonebookCtrl from './phonebookCtrl';
+import PhonebookCtrl from './PhonebookCtrl';
 
-export default angular.module("phonebookModule", [])
-  .controller("phonebookCtrl", phonebookCtrl);
+export default angular.module("PhonebookModule", [])
+  .controller("PhonebookCtrl", PhonebookCtrl);
