@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="phonebookApp">
+<html lang="en" ng-app="PhonebookApp">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -41,8 +41,8 @@
         </div>
       </nav>
     </header>
-    <main ng-controller="MainController">
-      <article class="container">
+    <main>
+      <article class="container" ng-controller="PhonebookCtrl">
           <div class="card phonebook_container">
             <div class="card-body">
 
@@ -79,15 +79,18 @@
                     <tr>
                       <th scope="col">Name</th>
                       <th scope="col" ng-show="checked">Phone number</th>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="item in data | dataFilter : query : checked" ng-class="highlite(item.name[0])">
+                    <tr ng-repeat="item in data | DataFilter : query : checked" ng-class="highlite(item.name[0])">
                       <td>
                         {{item.name}}
                       </td>
                       <td class="phone_td" ng-show="checked">
                         <span>{{item.phone}}</span>
+                      </td>
+                      <td>
                         <span class="delete_btn" ng-click="deleteContact(item)">&#10005;</span>
                       </td>
                     </tr>
