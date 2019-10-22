@@ -1,6 +1,6 @@
-PhonebookCtrl.$inject = ["$scope", "FetchData", "HighlightTableData", "CreateContact", "DataService"];
+PhonebookCtrl.$inject = ["$scope", "HighlightTableData", "DataService"];
 
-export default function PhonebookCtrl($scope, FetchData, HighlightTableData, CreateContact, DataService) {
+export default function PhonebookCtrl($scope, HighlightTableData, DataService) {
   $scope.checked = true;
 
   // Fetching data from fake server
@@ -23,6 +23,7 @@ export default function PhonebookCtrl($scope, FetchData, HighlightTableData, Cre
   }
 
   // Delete contact
-  $scope.deleteContact = item =>
-    ($scope.data = $scope.data.filter(({ id }) => item.id !== id));
+  $scope.deleteContact = ({ id }) => {
+    $scope.data = DataService.removeContact(id);
+  }
 }
