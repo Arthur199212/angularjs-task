@@ -1,10 +1,12 @@
 import angular from "angular";
 
-import "./style.scss";
+import "./styles/style.scss";
 import './filters';
 import './controllers';
+import './services'
 
 angular.module("PhonebookApp", [
   "CustomFilters",
+  "ServicesModule",
   "PhonebookModule"
 ]);

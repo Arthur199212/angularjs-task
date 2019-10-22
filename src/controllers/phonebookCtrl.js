@@ -1,38 +1,38 @@
-import idGenerator from '../helpers/idGenerator';
+import idGenerator from "../helpers/idGenerator";
 
-export default function PhonebookCtrl($scope, $http) {
-    $scope.checked = true;
-  
-    $http.get("data.json").then(res => {
+PhonebookCtrl.$inject = ["$scope", "FetchData", "HighlightTableData", "CreateContact"];
+
+export default function PhonebookCtrl($scope, FetchData, HighlightTableData, CreateContact) {
+  $scope.checked = true;
+
+  // Fetching data from fake server
+  FetchData()
+    .then(res => {
       $scope.data = res.data;
-  
-      $scope.highlite = firstLetter => {
-        switch (firstLetter.toLowerCase()) {
-          case "a":
-            return "red_field";
-          case "b":
-            return "blue_field";
-          default:
-            return "";
-        }
-      };
+    })
+    .catch(() => {
+      console.log('Error with connection');
     });
-  
-    $scope.addContact = () => {
-      if ($scope.nameNew && $scope.phoneNew) {
-        $scope.data = [...$scope.data, {
-          id: idGenerator(),
-          name: $scope.nameNew,
-          phone: $scope.phoneNew
-        }];
-  
-        $scope.nameNew = '';
-        $scope.phoneNew = '';
-      } else {
-        alert('Fill up all the fields to create a new contact');
-      }
+
+  // Usage of HighlightTableData
+  $scope.highlight = HighlightTableData;
+
+  // Adding new contact
+  $scope.addContact = () => {
+    const newContact = CreateContact($scope.nameNew, $scope.phoneNew);
+
+    if (newContact) {
+      $scope.data = [...$scope.data, newContact]
+
+      $scope.nameNew = "";
+      $scope.phoneNew = "";
+    } else {
+      // TODO Form validation
+      alert("Fill up all the fields to create a new contact");
     }
-  
-    $scope.deleteContact = item =>
-      $scope.data = $scope.data.filter(({ id }) => item.id !== id);
-  }
+  };
+
+  // Delete contact
+  $scope.deleteContact = item =>
+    ($scope.data = $scope.data.filter(({ id }) => item.id !== id));
+}

@@ -7,9 +7,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
+    "build": "rimraf dist && webpack --bail --progress --profile --mode=production",
     "deploy": "git subtree push --prefix dist origin gh-pages",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
     "start": "npm run server"
   },
   "keywords": [],
