@@ -56,7 +56,7 @@
                     </div>
   
                     <div class="checkbox_container">
-                      <input class="checkbox" type="checkbox" ng-model="checked">
+                      <input class="checkbox" type="checkbox" ng-model="checked" ng-click="handleShow()">
                       <div>
                         Show phone numbers
                       </div>
@@ -83,7 +83,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="item in data | DataFilter : query : checked" ng-class="highlight(item.name[0])">
+                    <tr ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name'" ng-class="highlight(item.name[0])">
                       <td>
                         {{item.name}}
                       </td>
