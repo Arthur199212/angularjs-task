@@ -83,7 +83,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="item in data | DataFilter : query : checked" ng-class="highlight(item.name[0])">
+                    <tr ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name'" ng-class="highlight(item.name[0])">
                       <td>
                         {{item.name}}
                       </td>
