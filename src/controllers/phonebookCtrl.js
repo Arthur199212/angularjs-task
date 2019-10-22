@@ -1,7 +1,13 @@
 PhonebookCtrl.$inject = ["$scope", "HighlightTableData", "DataService"];
 
 export default function PhonebookCtrl($scope, HighlightTableData, DataService) {
-  $scope.checked = true;
+  // Show phone numbers
+  $scope.checked = localStorage.getItem('showNumbers') === 'true';
+
+  $scope.handleShow = () => {
+    localStorage.setItem('showNumbers', `${!$scope.checked}`);
+    $scope.checked = !$scope.checked;
+  }
 
   // Fetching data from fake server
   DataService.getAll().then(data => $scope.data = data);
