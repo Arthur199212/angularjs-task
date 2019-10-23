@@ -1,0 +1,17 @@
+<li
+  class="row list-group-item contact_item"
+  ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name'"
+  ng-class="highlight(item.name[0])"
+>
+  <div class="col">
+    {{ item.name }}
+  </div>
+  <div class="col" ng-show="checked">
+    {{ item.phone }}
+  </div>
+  <div class="col container_delete-btn">
+    <span class="delete_btn" ng-click="deleteContact(item)">
+      &#10005;
+    </span>
+  </div>
+</li>

@@ -1,4 +1,4 @@
-export default function contactsTable() {
+export default function contactData() {
     function link (scope, element, attrs) {
 
     }
@@ -6,6 +6,6 @@ export default function contactsTable() {
     return {
       restrict: 'E',
       link,
-      template: require('./contactsTable.html'),
+      template: require('./contactData.html'),
     }
   }

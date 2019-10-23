@@ -1,29 +1,20 @@
-<div class="table_container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col" ng-show="checked">Phone number</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name'"
-        ng-class="highlight(item.name[0])"
-      >
-        <td>
-          {{ item.name }}
-        </td>
-        <td class="phone_td" ng-show="checked">
-          <span>{{ item.phone }}</span>
-        </td>
-        <td>
-          <span class="delete_btn" ng-click="deleteContact(item)"
-            >&#10005;</span
-          >
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <ul class="table_list">
+        <li class="row list-group-item contact_item table_header">
+          <div class="col">
+            Name
+          </div>
+          <div class="col" ng-show="checked">
+            Phone number
+          </div>
+          <div class="col"></div>
+        </li>
+
+        <contact-data></contact-data>
+
+      </ul>
+    </div>
+  </div>
 </div>
