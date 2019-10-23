@@ -31,7 +31,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-
   </head>
   <body>
     <header>
@@ -43,23 +42,38 @@
     </header>
     <main>
       <article class="container" ng-controller="PhonebookCtrl">
-          <div class="card phonebook_container">
-            <div class="card-body">
+        <div class="card phonebook_container">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-body controller_container">
 
-              <filter-contacts></filter-contacts>
+                <filter-contacts
+                  query="query"
+                  checked="checked"
+                  handle-show="handleShow()"
+                >
+                </filter-contacts>
 
-              <contacts-table></contacts-table>
+                <create-contact
+                  name-new="nameNew"
+                  phone-new="phoneNew"
+                  add-contact="addContact()"
+                >
+                </create-contact>
 
+              </div>
             </div>
-          </div>
-      </article>
 
+            <contacts-table></contacts-table>
+            
+          </div>
+        </div>
+      </article>
     </main>
     <footer class="footer bg-primary text-white">
       <div class="container text-center">
         © Awesome Mentor 2019
       </div>
     </footer>
-
   </body>
 </html>
