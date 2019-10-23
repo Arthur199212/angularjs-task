@@ -2,11 +2,13 @@ import angular from "angular";
 
 import "./styles/style.scss";
 import './filters';
-import './controllers';
 import './services'
+import './controllers';
+import './directives';
 
 angular.module("PhonebookApp", [
   "CustomFilters",
   "ServicesModule",
-  "PhonebookModule"
+  "PhonebookModule",
+  "Directives"
 ]);

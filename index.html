@@ -46,61 +46,14 @@
           <div class="card phonebook_container">
             <div class="card-body">
 
-              <div class="card">
-                <div class="card-body controller_container">
+              <filter-contacts></filter-contacts>
 
-                  <div class="search_container">
-                    <div>
-                      <p class="label_search">Search for a contact</p>
-                      <input class="input_query" type="text" placeholder="Type a query..." ng-model="query">
-                    </div>
-  
-                    <div class="checkbox_container">
-                      <input class="checkbox" type="checkbox" ng-model="checked" ng-click="handleShow()">
-                      <div>
-                        Show phone numbers
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="create-contact_container">
-                    <p class="label_search">Add a new contact</p>
-                    <input class="input_query" type="text" placeholder="Name" ng-model="nameNew">
-                    <input class="input_query" type="text" placeholder="Phone" ng-model="phoneNew">
-                    <button class="btn create_btn" type="button" ng-click="addContact()"><span>Create</span></button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="table_container">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col" ng-show="checked">Phone number</th>
-                      <th scope="col"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name'" ng-class="highlight(item.name[0])">
-                      <td>
-                        {{item.name}}
-                      </td>
-                      <td class="phone_td" ng-show="checked">
-                        <span>{{item.phone}}</span>
-                      </td>
-                      <td>
-                        <span class="delete_btn" ng-click="deleteContact(item)">&#10005;</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <contacts-table></contacts-table>
 
             </div>
           </div>
       </article>
+
     </main>
     <footer class="footer bg-primary text-white">
       <div class="container text-center">
