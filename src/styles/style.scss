@@ -28,6 +28,11 @@ main {
   }
 }
 
+.contact_item {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .checkbox_container {
   margin-top: 10px;
   display: flex;
@@ -53,10 +58,22 @@ main {
   margin-top: 20px;
 }
 
-.table_container {
-  margin-top: 20px;
-  height: 60vh;
+.table_list {
+  padding: 0;
+  height: 55vh;  
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container_delete-btn {
+  display: flex;
+  justify-content: flex-end;
+  user-select: none;
+}
+
+.table_header {
+  color: #fff;
+  background-color: #007BFF;
 }
 
 .footer {
@@ -73,11 +90,6 @@ main {
 
 .red_field {
   background-color: rgb(255, 230, 230);
-}
-
-.phone_td {
-  display: flex;
-  justify-content: space-between;
 }
 
 .delete_btn {
