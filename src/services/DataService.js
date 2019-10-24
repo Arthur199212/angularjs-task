@@ -1,7 +1,5 @@
 import idGenerator from "../helpers/idGenerator";
 
-DataService.$inject = ["$http"];
-
 export default function DataService($http) {
   return {
     getAll: () => {

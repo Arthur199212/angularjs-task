@@ -1,5 +1,3 @@
-PhonebookCtrl.$inject = ["$scope", "HighlightTableData", "DataService"];
-
 export default function PhonebookCtrl($scope, HighlightTableData, DataService) {
   // Show phone numbers
   $scope.checked = localStorage.getItem('showNumbers') === 'true';
