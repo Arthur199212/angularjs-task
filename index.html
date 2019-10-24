@@ -40,7 +40,7 @@
         </div>
       </nav>
     </header>
-    <main ng-app="PhonebookApp" ng-controller="PhonebookCtrl">
+    <main ng-app="PhonebookApp" ng-controller="PhonebookCtrl as PhonebookCtrl">
       <article class="container">
         <div class="card phonebook_container">
           <div class="card-body">
@@ -48,16 +48,16 @@
               <div class="card-body controller_container">
 
                 <filter-contacts
-                  query="query"
-                  checked="checked"
-                  handle-show="handleShow()"
+                  query="PhonebookCtrl.query"
+                  checked="PhonebookCtrl.checked"
+                  handle-show="PhonebookCtrl.handleShow()"
                 >
                 </filter-contacts>
 
                 <create-contact
-                  name-new="nameNew"
-                  phone-new="phoneNew"
-                  add-contact="addContact()"
+                  name-new="PhonebookCtrl.nameNew"
+                  phone-new="PhonebookCtrl.phoneNew"
+                  add-contact="PhonebookCtrl.addContact()"
                 >
                 </create-contact>
 

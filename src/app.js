@@ -12,7 +12,7 @@ import HighlightTableData from './services/HighlightTableData';
 import DataFilter from './filters/DataFilter';
 
 angular.module("PhonebookApp", [])
-.controller("PhonebookCtrl", ["$scope", "HighlightTableData", "DataService", PhonebookCtrl])
+.controller("PhonebookCtrl", ["HighlightTableData", "DataService", PhonebookCtrl])
 .service("DataService", ["$http", DataService])
 .service("HighlightTableData", HighlightTableData)
 .filter("DataFilter", DataFilter)

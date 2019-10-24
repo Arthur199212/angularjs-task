@@ -1,25 +1,25 @@
-export default function PhonebookCtrl($scope, HighlightTableData, DataService) {
+export default function PhonebookCtrl(HighlightTableData, DataService) {
   // Show phone numbers
-  $scope.checked = localStorage.getItem('showNumbers') === 'true';
+  this.checked = localStorage.getItem('showNumbers') === 'true';
 
-  $scope.handleShow = () => {
-    localStorage.setItem('showNumbers', `${!$scope.checked}`);
-    $scope.checked = !$scope.checked;
+  this.handleShow = () => {
+    localStorage.setItem('showNumbers', `${!this.checked}`);
+    this.checked = !this.checked;
   }
 
   // Fetching data from fake server
-  DataService.getAll().then(data => $scope.data = data);
+  DataService.getAll().then((data) => this.data = data);
 
   // Usage of HighlightTableData
-  $scope.highlight = HighlightTableData;
+  this.highlight = HighlightTableData;
 
   // Adding new contact
-  $scope.addContact = () => {
-    if ($scope.nameNew, $scope.phoneNew) {
-      $scope.data = DataService.addContact($scope.nameNew, $scope.phoneNew);
+  this.addContact = () => {
+    if (this.nameNew, this.phoneNew) {
+      this.data = DataService.addContact(this.nameNew, this.phoneNew);
   
-      $scope.nameNew = '';
-      $scope.phoneNew = '';
+      this.nameNew = '';
+      this.phoneNew = '';
     } else {
       // TODO Validation
       alert('Fill all fields to add a new contact');
@@ -27,7 +27,7 @@ export default function PhonebookCtrl($scope, HighlightTableData, DataService) {
   }
 
   // Delete contact
-  $scope.deleteContact = ({ id }) => {
-    $scope.data = DataService.removeContact(id);
+  this.deleteContact = ({ id }) => {
+    this.data = DataService.removeContact(id);
   }
 }
