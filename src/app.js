@@ -1,4 +1,5 @@
 import angular from "angular";
+import 'angular-ui-router';
 
 import "./styles/style.scss";
 
@@ -11,7 +12,13 @@ import DataService from './services/DataService';
 import HighlightTableData from './services/HighlightTableData';
 import DataFilter from './filters/DataFilter';
 
-angular.module("PhonebookApp", [])
+import home from './routers/home';
+import add from './routers/add';
+import edit from './routers/edit';
+
+angular.module("PhonebookApp", [
+    "ui.router"
+])
 .controller("PhonebookCtrl", ["HighlightTableData", "DataService", PhonebookCtrl])
 .service("DataService", ["$http", DataService])
 .service("HighlightTableData", HighlightTableData)
@@ -19,4 +26,7 @@ angular.module("PhonebookApp", [])
 .directive('filterContacts', filterContacts)
 .directive('contactsTable', contactsTable)
 .directive('contactData', contactData)
-.directive('createContact', createContact);
+.directive('createContact', createContact)
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', home])
+.config(['$stateProvider', add])
+.config(['$stateProvider', edit])

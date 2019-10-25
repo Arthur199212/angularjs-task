@@ -1,0 +1,27 @@
+<main ng-controller="PhonebookCtrl as PhonebookCtrl">
+  <article class="container">
+    <div class="card phonebook_container">
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body controller_container">
+            <filter-contacts
+              query="PhonebookCtrl.query"
+              checked="PhonebookCtrl.checked"
+              handle-show="PhonebookCtrl.handleShow()"
+            >
+            </filter-contacts>
+
+            <create-contact
+              name-new="PhonebookCtrl.nameNew"
+              phone-new="PhonebookCtrl.phoneNew"
+              add-contact="PhonebookCtrl.addContact()"
+            >
+            </create-contact>
+          </div>
+        </div>
+
+        <contacts-table></contacts-table>
+      </div>
+    </div>
+  </article>
+</main>
