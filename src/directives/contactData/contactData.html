@@ -9,7 +9,12 @@
   <div class="col" ng-show="PhonebookCtrl.checked">
     {{ item.phone }}
   </div>
-  <div class="col container_delete-btn">
+  <div class="col container_edition">
+    <span class="edit_btn" ng-click="PhonebookCtrl.deleteContact(item)">
+      <a class="badge" href="/edit">
+        &#9998;
+      </a>
+    </span>
     <span class="delete_btn" ng-click="PhonebookCtrl.deleteContact(item)">
       &#10005;
     </span>

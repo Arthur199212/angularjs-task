@@ -65,11 +65,21 @@ main {
   overflow-x: hidden;
 }
 
-.container_delete-btn {
+.container_edition {
   display: flex;
   justify-content: flex-end;
   user-select: none;
+
+  span {
+    display: inline-block;
+  }
+
+  .edit_btn {
+    margin-right: 20px;
+    cursor: pointer;
+  }
 }
+
 
 .table_header {
   color: #fff;

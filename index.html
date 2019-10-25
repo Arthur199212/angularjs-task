@@ -31,16 +31,34 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
   </head>
   <body ng-app="PhonebookApp">
     <header>
-      <nav class="navbar bg-primary text-white">
+      <nav class="navbar navbar-expand-lg bg-primary text-white">
         <div class="container">
-          <h1 class="navbar-brand mb-0 h1">Phonebook</h1>
+          <h1 class="navbar-brand mb-0 h1">
+            <a class="nav-link text-white" href="/">
+              Phonebook
+            </a>
+          </h1>
+          <div class="container collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/add">Add a contact</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link text-white" href="/edit">Edit</a>
+              </li> -->
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
-  
+
     <ui-view></ui-view>
 
     <footer class="footer bg-primary text-white">
