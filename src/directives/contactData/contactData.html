@@ -10,8 +10,8 @@
     {{ item.phone }}
   </div>
   <div class="col container_edition">
-    <span class="edit_btn" ng-click="PhonebookCtrl.deleteContact(item)">
-      <a class="badge" href="/edit">
+    <span class="edit_btn" ng-click="">
+      <a class="badge" ui-sref="edit({ contactId: item.id })">
         &#9998;
       </a>
     </span>

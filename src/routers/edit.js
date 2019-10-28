@@ -1,8 +1,6 @@
 export default function($stateProvider) {
-    $stateProvider.state("edit", {
-      url: "/edit",
-      template: require("../directives/editPage/editPage.html"),
-      controller: "PhonebookCtrl"
-    });
-  }
-  
+  $stateProvider.state("edit", {
+    url: "/edit/{contactId}",
+    component: "editPage"
+  });
+}

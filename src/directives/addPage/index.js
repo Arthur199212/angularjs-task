@@ -4,6 +4,6 @@ export default function contactData() {
   return {
     restrict: "E",
     link,
-    template: require("./homePage.html")
+    template: require("./addPage.html")
   };
 }
