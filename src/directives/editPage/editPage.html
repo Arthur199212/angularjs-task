@@ -1,6 +1,69 @@
-<main>
-  <article class="container">
-    <div>EDIT PAGE</div>
-    <div>{{ctrl.contactId}}</div>
-  </article>
-</main>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <div class="card register">
+        <div class="card d-flex align-items-start justify-content-between">
+          <div class="card-body" style="margin: 0 auto;">
+            <form
+              name="form"
+              style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
+              novalidate
+              ng-submit="register(form.$valid)"
+              ng-show="!submited"
+            >
+              <div
+                class="textintro"
+                style="display: flex; align-items: center; flex-direction: column;"
+              >
+                <h1 class="card-title text-dark">Edit a contact</h1>
+                <p>To edit selected contact please change following parameters</p>
+              </div>
+
+              <fieldset style="display: flex; flex-wrap: nowrap;">
+                <input
+                  class="form_field"
+                  type="text"
+                  name="firstname"
+                  ng-model="ctrl.contactData.name"
+                  ng-required="true"
+                />
+                <p
+                  class="hint"
+                  ng-if="form.firstname.$invalid && form.firstname.$touched"
+                >
+                  You should fill out this field
+                </p>
+                <input
+                  class="form_field"
+                  type="phone"
+                  name="phone"
+                  ng-model="ctrl.contactData.phone"
+                />
+                <p
+                  class="hint"
+                  ng-if="form.email.$invalid && form.email.$touched"
+                >
+                  You should type a valid phone number
+                </p>
+              </fieldset>
+
+              <button class="btn create_btn" type="button" ng-click="ctrl.handleEditContact()">
+                <span>Submit</span>
+              </button>
+              <p class="hint" ng-show="notValidAttempt">
+                You should fill up the form before submiting
+              </p>
+            </form>
+
+            <div ng-show="submited" style="margin: 100px auto;">
+              <h2>
+                Thanks for filling up the form!
+              </h2>
+              <a ui-sref="home">Go back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
