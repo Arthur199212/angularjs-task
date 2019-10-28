@@ -1,6 +1,6 @@
 <li
   class="row list-group-item contact_item"
-  ng-repeat="item in PhonebookCtrl.data | DataFilter : PhonebookCtrl.query : PhonebookCtrl.checked | orderBy: 'name'"
+  ng-repeat="item in PhonebookCtrl.data | DataFilter : PhonebookCtrl.query : PhonebookCtrl.checked | orderBy: 'name' track by item.id"
   ng-class="PhonebookCtrl.highlight(item.name[0])"
 >
   <div class="col">
