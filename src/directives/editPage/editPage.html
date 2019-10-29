@@ -9,7 +9,7 @@
               style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
               novalidate
               ng-submit="register(form.$valid)"
-              ng-show="!submited"
+              ng-show="!ctrl.submited"
             >
               <div
                 class="textintro"
@@ -55,7 +55,7 @@
               </p>
             </form>
 
-            <div ng-show="submited" style="margin: 100px auto;">
+            <div ng-show="ctrl.submited" style="margin: 100px auto;">
               <h2>
                 Thanks for filling up the form!
               </h2>

@@ -1,18 +1,5 @@
 <div class="create-contact_container">
-  <p class="label_search">Add a new contact</p>
-  <input
-    class="input_query"
-    type="text"
-    placeholder="Name"
-    ng-model="nameNew"
-  />
-  <input
-    class="input_query"
-    type="text"
-    placeholder="Phone"
-    ng-model="phoneNew"
-  />
-  <button class="btn create_btn" type="button" ng-click="addContact()">
-    <span>Create</span>
+  <button class="btn create_btn" type="button" ui-sref="add">
+    <span>Add contact</span>
   </button>
 </div>

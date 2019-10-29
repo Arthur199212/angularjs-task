@@ -3,11 +3,7 @@ export default function createContact() {
 
   return {
     restrict: "E",
-    scope: {
-      nameNew: "=",
-      phoneNew: "=",
-      addContact: "&",
-    },
+    scope: {},
     link,
     template: require("./createContact.html")
   };

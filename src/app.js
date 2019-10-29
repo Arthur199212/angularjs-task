@@ -9,6 +9,7 @@ import contactsTable from './directives/contactsTable';
 import contactData from './directives/contactData';
 import createContact from './directives/createContact';
 import editPage from './directives/editPage';
+import addPage from './directives/addPage';
 import DataService from './services/DataService';
 import HighlightTableData from './services/HighlightTableData';
 import DataFilter from './filters/DataFilter';
@@ -28,7 +29,8 @@ angular.module("PhonebookApp", [
 .directive('contactsTable', contactsTable)
 .directive('contactData', contactData)
 .directive('createContact', createContact)
-.directive('editPage', editPage)
+.directive('addPage', ['DataService', addPage])
+.directive('editPage', ['$stateParams', 'DataService', editPage])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', home])
 .config(['$stateProvider', add])
 .config(['$stateProvider', edit])

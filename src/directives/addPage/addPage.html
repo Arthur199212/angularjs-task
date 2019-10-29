@@ -9,7 +9,7 @@
               style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
               novalidate
               ng-submit="register(form.$valid)"
-              ng-show="!submited"
+              ng-show="!ctrl.submited"
             >
               <div
                 class="textintro"
@@ -23,9 +23,9 @@
                 <input
                   class="form_field"
                   type="text"
-                  name="firstname"
+                  name="name"
                   placeholder="Name"
-                  ng-model="user.firstname"
+                  ng-model="ctrl.contactData.name"
                   ng-required="true"
                 />
                 <p
@@ -39,7 +39,7 @@
                   type="phone"
                   name="phone"
                   placeholder="Phone"
-                  ng-model="user.email"
+                  ng-model="ctrl.contactData.phone"
                 />
                 <p
                   class="hint"
@@ -49,7 +49,7 @@
                 </p>
               </fieldset>
 
-              <button class="btn create_btn" type="button" ng-click="addContact()">
+              <button class="btn create_btn" type="button" ng-click="ctrl.handleClick()">
                 <span>Create</span>
               </button>
               <p class="hint" ng-show="notValidAttempt">
@@ -57,11 +57,11 @@
               </p>
             </form>
 
-            <div ng-show="submited" style="margin: 100px auto;">
+            <div ng-show="ctrl.submited" style="margin: 100px auto;">
               <h2>
-                Thanks for filling up the form!
+                A new contact has been added
               </h2>
-              <a href="#/">Go back</a>
+              <a ui-sref="home">Go back</a>
             </div>
           </div>
         </div>
