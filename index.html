@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PhonebookApp">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -31,45 +31,36 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
   <link href="main.css" rel="stylesheet"></head>
-  <body>
+  <body ng-app="PhonebookApp">
     <header>
-      <nav class="navbar bg-primary text-white">
+      <nav class="navbar navbar-expand-lg bg-primary text-white">
         <div class="container">
-          <h1 class="navbar-brand mb-0 h1">Phonebook</h1>
+          <h1 class="navbar-brand mb-0 h1">
+            <a class="nav-link text-white" ui-sref="home">
+              Phonebook
+            </a>
+          </h1>
+          <div class="container collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white" ui-sref="home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" ui-sref="add">Add a contact</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link text-white" href="/edit">Edit</a>
+              </li> -->
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
-    <main>
-      <article class="container" ng-controller="PhonebookCtrl">
-        <div class="card phonebook_container">
-          <div class="card-body">
-            <div class="card">
-              <div class="card-body controller_container">
 
-                <filter-contacts
-                  query="query"
-                  checked="checked"
-                  handle-show="handleShow()"
-                >
-                </filter-contacts>
+    <ui-view></ui-view>
 
-                <create-contact
-                  name-new="nameNew"
-                  phone-new="phoneNew"
-                  add-contact="addContact()"
-                >
-                </create-contact>
-
-              </div>
-            </div>
-
-            <contacts-table></contacts-table>
-            
-          </div>
-        </div>
-      </article>
-    </main>
     <footer class="footer bg-primary text-white">
       <div class="container text-center">
         © Awesome Mentor 2019
