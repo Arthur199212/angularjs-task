@@ -18,9 +18,7 @@ import home from './routers/home';
 import add from './routers/add';
 import edit from './routers/edit';
 
-angular.module("PhonebookApp", [
-    "ui.router"
-])
+angular.module("PhonebookApp", ["ui.router"])
 .controller("PhonebookCtrl", ["HighlightTableData", "DataService", PhonebookCtrl])
 .service("DataService", ["$http", DataService])
 .service("HighlightTableData", HighlightTableData)

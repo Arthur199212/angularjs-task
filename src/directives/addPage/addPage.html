@@ -5,10 +5,10 @@
         <div class="card d-flex align-items-start justify-content-between">
           <div class="card-body" style="margin: 0 auto;">
             <form
-              name="form"
+              name="addForm"
               style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
               novalidate
-              ng-submit="register(form.$valid)"
+              ng-submit="register(addForm.$valid)"
               ng-show="!ctrl.submited"
             >
               <div
@@ -23,16 +23,31 @@
                 <input
                   class="form_field"
                   type="text"
-                  name="name"
                   placeholder="Name"
+                  name="name"
+                  ng-minlength="3"
+                  ng-maxlength="20"
                   ng-model="ctrl.contactData.name"
+                  ng-pattern="ctrl.checkName"
                   ng-required="true"
                 />
                 <p
                   class="hint"
-                  ng-if="form.firstname.$invalid && form.firstname.$touched"
+                  ng-show="addForm.name.$invalid && addForm.name.$touched && !addForm.name.$error.minlength && !addForm.name.$error.maxlength"
                 >
-                  You should fill out this field
+                  You should fill out this field and please use only letters
+                </p>
+                <p
+                  class="hint"
+                  ng-show="addForm.name.$invalid && addForm.name.$touched && addForm.name.$error.minlength && !addForm.name.$error.maxlength"
+                >
+                  You should type in at least 3 characters
+                </p>
+                <p
+                  class="hint"
+                  ng-show="addForm.name.$invalid && addForm.name.$touched && !addForm.name.$error.minlength && addForm.name.$error.maxlength"
+                >
+                  You should type in less than 20 characters
                 </p>
                 <input
                   class="form_field"
@@ -40,16 +55,23 @@
                   name="phone"
                   placeholder="Phone"
                   ng-model="ctrl.contactData.phone"
+                  ng-pattern="ctrl.checkNumber"
+                  ng-required="true"
                 />
                 <p
                   class="hint"
-                  ng-if="form.email.$invalid && form.email.$touched"
+                  ng-show="addForm.phone.$invalid && addForm.phone.$touched"
                 >
-                  You should type a valid phone number
+                  You should type a valid phone number like +### (##) ###-##-##
                 </p>
               </fieldset>
 
-              <button class="btn create_btn" type="button" ng-click="ctrl.handleClick()">
+              <button
+                class="btn create_btn"
+                type="button"
+                ng-click="ctrl.handleClick()"
+                ng-disabled="addForm.$invalid"
+              >
                 <span>Create</span>
               </button>
               <p class="hint" ng-show="notValidAttempt">
