@@ -16,7 +16,9 @@
                 style="display: flex; align-items: center; flex-direction: column;"
               >
                 <h1 class="card-title text-dark">Edit a contact</h1>
-                <p>To edit selected contact please change following parameters</p>
+                <p>
+                  To edit selected contact please change following parameters
+                </p>
               </div>
 
               <fieldset style="display: flex; flex-wrap: nowrap;">
@@ -30,24 +32,20 @@
                   ng-pattern="ctrl.checkName"
                   ng-required="true"
                 />
-                <p
-                  class="hint"
-                  ng-show="editForm.name.$invalid && editForm.name.$touched && !editForm.name.$error.minlength && !editForm.name.$error.maxlength"
+                <div
+                  ng-show="editForm.name.$invalid && editForm.name.$touched"
+                  ng-messages="editForm.name.$error"
                 >
-                  You should fill out this field and please use only letters
-                </p>
-                <p
-                  class="hint"
-                  ng-show="editForm.name.$invalid && editForm.name.$touched && editForm.name.$error.minlength && !editForm.name.$error.maxlength"
-                >
-                  You should type in at least 3 characters
-                </p>
-                <p
-                  class="hint"
-                  ng-show="editForm.name.$invalid && editForm.name.$touched && !editForm.name.$error.minlength && editForm.name.$error.maxlength"
-                >
-                  You should type in less than 20 characters
-                </p>
+                  <p class="hint" ng-message="required">
+                    You should fill out this field
+                  </p>
+                  <p class="hint" ng-message="minlength">
+                    You should type in at least 3 characters
+                  </p>
+                  <p class="hint" ng-message="maxlength">
+                    You should type in less than 20 characters
+                  </p>
+                </div>
                 <input
                   class="form_field"
                   type="phone"
@@ -64,7 +62,12 @@
                 </p>
               </fieldset>
 
-              <button class="btn create_btn" type="button" ng-click="ctrl.handleEditContact()" ng-disabled="editForm.$invalid">
+              <button
+                class="btn create_btn"
+                type="button"
+                ng-click="ctrl.handleEditContact()"
+                ng-disabled="editForm.$invalid"
+              >
                 <span>Submit</span>
               </button>
               <p class="hint" ng-show="notValidAttempt">

@@ -1,5 +1,6 @@
 import angular from "angular";
 import 'angular-ui-router';
+import 'angular-messages';
 
 import "./styles/style.scss";
 
@@ -18,7 +19,7 @@ import home from './routers/home';
 import add from './routers/add';
 import edit from './routers/edit';
 
-angular.module("PhonebookApp", ["ui.router"])
+angular.module("PhonebookApp", ["ui.router", "ngMessages"])
 .controller("PhonebookCtrl", ["HighlightTableData", "DataService", PhonebookCtrl])
 .service("DataService", ["$http", DataService])
 .service("HighlightTableData", HighlightTableData)

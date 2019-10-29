@@ -31,24 +31,26 @@
                   ng-pattern="ctrl.checkName"
                   ng-required="true"
                 />
-                <p
-                  class="hint"
-                  ng-show="addForm.name.$invalid && addForm.name.$touched && !addForm.name.$error.minlength && !addForm.name.$error.maxlength"
-                >
-                  You should fill out this field and please use only letters
-                </p>
-                <p
-                  class="hint"
-                  ng-show="addForm.name.$invalid && addForm.name.$touched && addForm.name.$error.minlength && !addForm.name.$error.maxlength"
-                >
-                  You should type in at least 3 characters
-                </p>
-                <p
-                  class="hint"
-                  ng-show="addForm.name.$invalid && addForm.name.$touched && !addForm.name.$error.minlength && addForm.name.$error.maxlength"
-                >
-                  You should type in less than 20 characters
-                </p>
+                <div ng-show="addForm.name.$invalid && addForm.name.$touched" ng-messages="addForm.name.$error">
+                  <p
+                    class="hint"
+                    ng-message="required"
+                  >
+                    You should fill out this field
+                  </p>
+                  <p
+                    class="hint"
+                    ng-message="minlength"
+                  >
+                    You should type in at least 3 characters
+                  </p>
+                  <p
+                    class="hint"
+                    ng-message="maxlength"
+                  >
+                    You should type in less than 20 characters
+                  </p>
+                </div>
                 <input
                   class="form_field"
                   type="phone"
