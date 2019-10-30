@@ -1,9 +1,16 @@
 $heighNavFooter: 60px;
 
+@mixin background-color($color: #FFF) {
+  background: {
+    color: $color;
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   margin-bottom: $heighNavFooter;
 }
@@ -76,7 +83,6 @@ main {
   }
 }
 
-
 .table_header {
   color: #fff;
   background-color: #007BFF;
@@ -91,18 +97,18 @@ main {
 }
 
 .blue_field {
-  background-color: rgb(224, 249, 255);
+  @include background-color(rgb(224, 249, 255));
 }
 
 .red_field {
-  background-color: rgb(255, 230, 230);
+  @include background-color(rgb(255, 230, 230));
 }
 
 .delete_btn {
   cursor: pointer;
 }
 
-// CREATE CONTACT FORM
+// FORMS
 .form_field {
   margin: 10px 0 0;
   width: 100%;
@@ -122,12 +128,6 @@ form input.ng-invalid.ng-touched {
 form input.ng-valid.ng-touched {
   border: 1px solid #509D12;
 }
-
-// .ng-valid .btn {
-//   background-color: rgb(211, 250, 178);
-//   box-shadow: 0 1px 4px rgb(201, 255, 239);
-//   color: black;
-// }
 
 // BUTTONS STYLING
 .btn {
