@@ -7,7 +7,7 @@ export default function DataService($http) {
   this.getAll = () => {
     return $http
       .get(
-        "https://raw.githubusercontent.com/Arthur199212/angularjs-task/master/src/data/db.json"
+        "https://raw.githubusercontent.com/Arthur199212/angularjs-task/task-3/src/data/db.json"
       )
       .then(res => {
         this.data = res.data;
