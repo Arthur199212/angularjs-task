@@ -1,14 +1,13 @@
-export default function filterContacts() {
+export default function showPhoneNumbers() {
   function link(scope, element, attrs) {}
 
   return {
     restrict: "E",
     scope: {
-      query: "=",
       checked: "=",
       handleShow: "&"
     },
     link,
-    template: require("./filterContacts.html")
+    template: require("./showPhoneNumbers.html")
   };
 }

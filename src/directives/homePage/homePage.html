@@ -4,12 +4,15 @@
       <div class="card-body">
         <div class="card">
           <div class="card-body controller_container">
-            <filter-contacts
-              query="PhonebookCtrl.query"
-              checked="PhonebookCtrl.checked"
-              handle-show="PhonebookCtrl.handleShow()"
-            >
-            </filter-contacts>
+            <div class="search_container">
+              <search-text query="PhonebookCtrl.query"> </search-text>
+
+              <show-phone-numbers
+                checked="PhonebookCtrl.checked"
+                handle-show="PhonebookCtrl.handleShow()"
+              >
+              </show-phone-numbers>
+            </div>
           </div>
         </div>
 
