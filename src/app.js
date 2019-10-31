@@ -5,13 +5,14 @@ import 'angular-messages';
 import "./styles/style.scss";
 
 import PhonebookCtrl from './controllers/phonebookCtrl';
-import contactsTable from './directives/contactsTable';
-import contactData from './directives/contactData';
-import createContact from './directives/createContact';
-import editPage from './directives/editPage';
-import addPage from './directives/addPage';
-import searchText from './directives/searchText';
-import showPhoneNumbers from './directives/showPhoneNumbers';
+import contactsTable from './directives/contactsTable/contactsTable';
+import contactData from './directives/contactData/contactData';
+import createContact from './directives/createContact/createContact';
+import editPage from './directives/editPage/editPage';
+import addPage from './directives/addPage/addPage';
+import homePage from './directives/homePage/homePage';
+import searchText from './directives/searchText/searchText';
+import showPhoneNumbers from './directives/showPhoneNumbers/showPhoneNumbers';
 import DataService from './services/DataService';
 import HighlightTableData from './services/HighlightTableData';
 import DataFilter from './filters/DataFilter';
@@ -25,6 +26,7 @@ angular.module("PhonebookApp", ["ui.router", "ngMessages"])
 .service("DataService", ["$http", DataService])
 .service("HighlightTableData", HighlightTableData)
 .filter("DataFilter", DataFilter)
+.directive('homePage', homePage)
 .directive('contactsTable', contactsTable)
 .directive('contactData', contactData)
 .directive('createContact', createContact)

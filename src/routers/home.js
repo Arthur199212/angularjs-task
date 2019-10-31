@@ -7,7 +7,6 @@ export default function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider.state("home", {
     url: "/",
-    template: require("../directives/homePage/homePage.html"),
-    controller: "PhonebookCtrl"
+    component: "homePage"
   });
 }

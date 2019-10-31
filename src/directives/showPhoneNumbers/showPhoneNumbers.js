@@ -8,6 +8,6 @@ export default function showPhoneNumbers() {
       handleShow: "&"
     },
     link,
-    template: require("./showPhoneNumbers.html")
+    template: require("./tpl/showPhoneNumbers.html")
   };
 }

@@ -7,6 +7,6 @@ export default function searchText() {
       query: "=",
     },
     link,
-    template: require("./searchText.html")
+    template: require("./tpl/searchText.html")
   };
 }

@@ -5,7 +5,7 @@ export default function addPage() {
     restrict: "E",
     scope: {},
     link,
-    template: require("./addPage.html"),
+    template: require("./tpl/addPage.html"),
     controllerAs: 'ctrl',
     controller: ['DataService', function addPageCtrl(DataService) {
       this.checkNumber = /^[+][0-9]{1,3}[\s][(][0-9]{1,3}[)][\s][0-9]{3}[-][0-9]{2}[-][0-9]{2}$|^[+][0-9]{1,3}[\s][0-9]{1,3}[\s][0-9]{3}[-][0-9]{2}[-][0-9]{2}$|^[+][0-9]{1,3}[\s][0-9]{1,3}[\s][0-9]{3}[\s][0-9]{2}[\s][0-9]{2}$|^[+][0-9]{,13}$/g;

@@ -5,6 +5,6 @@ export default function createContact() {
     restrict: "E",
     scope: {},
     link,
-    template: require("./createContact.html")
+    template: require("./tpl/createContact.html")
   };
 }

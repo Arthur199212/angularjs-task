@@ -4,6 +4,7 @@ export default function contactData() {
   return {
     restrict: "E",
     link,
-    template: require("./homePage.html")
+    controller: 'PhonebookCtrl',
+    template: require("./tpl/homePage.html")
   };
 }
