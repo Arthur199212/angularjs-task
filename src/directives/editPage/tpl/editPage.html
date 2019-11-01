@@ -3,17 +3,16 @@
     <div class="col-12 mt-3">
       <div class="card register">
         <div class="card d-flex align-items-start justify-content-between">
-          <div class="card-body" style="margin: 0 auto;">
+          <div class="card-body card_add-page">
             <form
+              class="contact_form"
               name="editForm"
-              style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
               novalidate
               ng-submit="register(editForm.$valid)"
               ng-show="!ctrl.submited"
             >
               <div
-                class="textintro"
-                style="display: flex; align-items: center; flex-direction: column;"
+                class="textintro label_container"
               >
                 <h1 class="card-title text-dark">Edit a contact</h1>
                 <p>
@@ -21,7 +20,7 @@
                 </p>
               </div>
 
-              <fieldset style="display: flex; flex-wrap: nowrap;">
+              <fieldset class="fieldset_container">
                 <input
                   class="form_field"
                   type="text"
@@ -75,7 +74,7 @@
               </p>
             </form>
 
-            <div ng-show="ctrl.submited" style="margin: 100px auto;">
+            <div ng-show="ctrl.submited" class="succes_info">
               <h2>
                 Contact data has been saved.
               </h2>

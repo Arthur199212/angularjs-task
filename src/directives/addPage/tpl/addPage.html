@@ -3,23 +3,22 @@
     <div class="col-12 mt-3">
       <div class="card register">
         <div class="card d-flex align-items-start justify-content-between">
-          <div class="card-body" style="margin: 0 auto;">
+          <div class="card-body card_add-page">
             <form
+              class="contact_form"
               name="addForm"
-              style="display: flex; justify-content: center; flex-direction: column; margin-bottom: 20px;"
               novalidate
               ng-submit="register(addForm.$valid)"
               ng-show="!ctrl.submited"
             >
               <div
-                class="textintro"
-                style="display: flex; align-items: center; flex-direction: column;"
+                class="textintro label_container"
               >
                 <h1 class="card-title text-dark">Create a contact</h1>
                 <p>Please fill out the form below</p>
               </div>
 
-              <fieldset style="display: flex; flex-wrap: nowrap;">
+              <fieldset class="fieldset_container">
                 <input
                   class="form_field"
                   type="text"
@@ -81,7 +80,7 @@
               </p>
             </form>
 
-            <div ng-show="ctrl.submited" style="margin: 100px auto;">
+            <div ng-show="ctrl.submited" class="succes_info">
               <h2>
                 A new contact has been added
               </h2>
