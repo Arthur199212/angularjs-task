@@ -1,11 +1,19 @@
 export default function contactData() {
-    function link (scope, element, attrs) {
-
-    }
-
-    return {
-      restrict: 'E',
-      link,
-      template: require('./tpl/contactData.html'),
-    }
-  }
+  return {
+    restrict: "E",
+    scope: {
+      data: "=",
+      query: "=",
+      checked: "=",
+      deleteContact: "&",
+    },
+    template: require("./tpl/contactData.html"),
+    controllerAs: "ctrl",
+    controller: [ "$scope", "DataService", function(scope, DataService) {
+        this.deleteContact = ({ id }) => {
+          scope.data = DataService.removeContact(id);
+        };
+      },
+    ],
+  };
+}

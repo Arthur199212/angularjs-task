@@ -1,10 +1,8 @@
-export default function contactData() {
-  function link(scope, element, attrs) {}
-
+export default function homePage() {
   return {
     restrict: "E",
-    link,
-    controller: 'PhonebookCtrl',
-    template: require("./tpl/homePage.html")
+    template: require("./tpl/homePage.html"),
+    controllerAs: "homePage",
+    controller: function() {},
   };
 }

@@ -1,10 +1,7 @@
 export default function editPage() {
-  function link(scope, element, attrs, ctrl) {}
-
   return {
     restrict: "E",
     scope: {},
-    link,
     template: require("./tpl/editPage.html"),
     controllerAs: "ctrl",
     controller: ["$stateParams", "DataService", function editPageCtrl($stateParams, DataService) {

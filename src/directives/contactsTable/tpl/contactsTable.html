@@ -6,14 +6,18 @@
           <div class="col">
             Name
           </div>
-          <div class="col" ng-show="PhonebookCtrl.checked">
+          <div class="col" ng-show="checked">
             Phone number
           </div>
           <div class="col"></div>
         </li>
 
-        <contact-data data="PhonebookCtrl.data"></contact-data>
-
+        <contact-data
+          data="ctrl.data"
+          query="query"
+          checked="checked"
+          delete-contact="ctrl.deleteContact"
+        ></contact-data>
       </ul>
     </div>
   </div>

@@ -1,15 +1,15 @@
-<main ng-controller="PhonebookCtrl as PhonebookCtrl">
+<main>
   <article class="container">
     <div class="card phonebook_container">
       <div class="card-body">
         <div class="card">
           <div class="card-body controller_container">
             <div class="search_container">
-              <search-text query="PhonebookCtrl.query"> </search-text>
+              <search-text query="ctrl.query">
+              </search-text>
 
               <show-phone-numbers
-                checked="PhonebookCtrl.checked"
-                handle-show="PhonebookCtrl.handleShow()"
+                checked="ctrl.checked"
               >
               </show-phone-numbers>
 
@@ -18,7 +18,10 @@
           </div>
         </div>
 
-        <contacts-table></contacts-table>
+        <contacts-table
+          query="ctrl.query"
+          checked="ctrl.checked"
+        ></contacts-table>
       </div>
     </div>
   </article>

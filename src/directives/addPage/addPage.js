@@ -1,10 +1,7 @@
 export default function addPage() {
-  function link(scope, element, attrs) {}
-
   return {
     restrict: "E",
     scope: {},
-    link,
     template: require("./tpl/addPage.html"),
     controllerAs: 'ctrl',
     controller: ['DataService', function addPageCtrl(DataService) {

@@ -1,21 +1,21 @@
 <li
   class="row list-group-item contact_item"
-  ng-repeat="item in PhonebookCtrl.data | DataFilter : PhonebookCtrl.query : PhonebookCtrl.checked | orderBy: 'name' track by item.id"
-  ng-class="PhonebookCtrl.highlight(item.name[0])"
+  ng-repeat="item in data | DataFilter : query : checked | orderBy: 'name' track by item.id"
+  add-class="{{item.name[0]}}"
 >
   <div class="col">
     {{ item.name }}
   </div>
-  <div class="col" ng-show="PhonebookCtrl.checked">
+  <div class="col" ng-show="checked">
     {{ item.phone }}
   </div>
   <div class="col container_edition">
-    <span class="edit_btn" ng-click="">
+    <span class="edit_btn">
       <a class="badge" ui-sref="edit({ contactId: item.id })">
         &#9998;
       </a>
     </span>
-    <span class="delete_btn" ng-click="PhonebookCtrl.deleteContact(item)">
+    <span class="delete_btn" ng-click="ctrl.deleteContact(item)">
       &#10005;
     </span>
   </div>

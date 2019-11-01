@@ -1,13 +1,16 @@
 export default function showPhoneNumbers() {
-  function link(scope, element, attrs) {}
-
   return {
     restrict: "E",
     scope: {
       checked: "=",
-      handleShow: "&"
     },
-    link,
-    template: require("./tpl/showPhoneNumbers.html")
+    template: require("./tpl/showPhoneNumbers.html"),
+    controllerAs: 'ctrl',
+    controller: ["$scope", function(scope) {
+      this.$onInit = () => scope.checked = localStorage.getItem("showNumbers") === "true";
+
+      this.onClick = () => localStorage.setItem("showNumbers", `${!scope.checked}`);
+      },
+    ],
   };
 }

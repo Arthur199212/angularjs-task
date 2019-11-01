@@ -1,12 +1,9 @@
 export default function searchText() {
-  function link(scope, element, attrs) {}
-
   return {
     restrict: "E",
     scope: {
       query: "=",
     },
-    link,
-    template: require("./tpl/searchText.html")
+    template: require("./tpl/searchText.html"),
   };
 }
